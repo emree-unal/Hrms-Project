@@ -1,14 +1,20 @@
 package project.hrms.api.controllers;
 
+
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import project.hrms.business.abstracts.PositionService;
+import project.hrms.core.utilities.results.DataResult;
+import project.hrms.core.utilities.results.Result;
 import project.hrms.entities.concretes.Position;
+
 
 @RestController
 @RequestMapping("/api/positions")
@@ -23,7 +29,12 @@ public class PositionsController {
 	}
 
 	@GetMapping("/getall")
-	public List<Position> getAll(){
+	public DataResult<List<Position>> getAll(){
 			return this.positionService.getAll();
 		}
+	
+	@PostMapping("/add")
+	public Result add(Position position) {
+		return this.positionService.add(position);
+	}
 }

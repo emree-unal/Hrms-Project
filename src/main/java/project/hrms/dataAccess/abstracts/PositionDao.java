@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import project.hrms.entities.concretes.Position;
 
 public interface PositionDao extends JpaRepository<Position, Integer> {
-	
+	boolean existsByPositionName(String name);
 }
