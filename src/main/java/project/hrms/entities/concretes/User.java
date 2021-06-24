@@ -11,13 +11,16 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+
 import lombok.Data;
+
 
 
 
 @Table(name="users")
 @Entity
 @Data
+
 @Inheritance(strategy= InheritanceType.JOINED)
 public class User  {
 	

@@ -22,12 +22,12 @@ import project.hrms.entities.dtos.JobAdvertisementDetailDto;
 
 @RestController
 @RequestMapping("/api/jobadvertisements")
-public class JobAdvertisementController {
+public class JobAdvertisementsController {
 	
 	private JobAdvertisementService _jobAdvertisementService;
 	
 	@Autowired
-	public JobAdvertisementController(JobAdvertisementService jobAdvertisementService) {
+	public JobAdvertisementsController(JobAdvertisementService jobAdvertisementService) {
 		this._jobAdvertisementService=jobAdvertisementService;
 	}
 	
